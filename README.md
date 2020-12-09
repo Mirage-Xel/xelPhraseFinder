@@ -1,1 +1,1 @@
-xelPhraseFinder
+#[ModKit Wiki](../../wiki)
