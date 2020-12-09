@@ -151,13 +151,13 @@ public class PhraseFinder : MonoBehaviour {
         bool digitMapping = bomb.GetIndicators().Count() % 2 == 0;
         if (digitMapping)
         {
-            validTimes[0] = 10 * (startingPos[0] % 6) + startingPos[1];
-            validTimes[1] = 10 * (endingPos[0] % 6) + endingPos[1];
+            validTimes[0] = 10 * (rowNumbers[startingPos[0]] % 6) + colNumbers[startingPos[1]];
+            validTimes[1] = 10 * (rowNumbers[endingPos[0]] % 6) + colNumbers[endingPos[1]];
         }
         else
         {
-            validTimes[0] = 10 * (startingPos[1] % 6) + startingPos[0];
-            validTimes[1] = 10 * (endingPos[1] % 6) + endingPos[0];
+            validTimes[0] = 10 * (colNumbers[startingPos[1]] % 6) + rowNumbers[startingPos[0]];
+            validTimes[1] = 10 * (colNumbers[endingPos[1]] % 6) + rowNumbers[endingPos[0]];
         }
         Debug.LogFormat("[Phrase Finder #{0}] The button should be pressed when the seconds digits are {1}, in order.", moduleId, validTimes.Join(" and "));
     }
